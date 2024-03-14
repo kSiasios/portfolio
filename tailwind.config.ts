@@ -11,6 +11,19 @@ const config: Config = {
       fontFamily: {
         Montserrat: ["Montserrat", "sans-serif"],
       },
+      keyframes: {
+        fadeIn: {
+          '0%': {opacity: "0%"},
+          '100%': {opacity: "100%"}
+        },
+        fadeOut: {
+          '0%': {opacity: "100%"},
+          '100%': {opacity: "0%"}
+        }
+      },
+      animation: {
+        fadeIn: "fadeIn 100ms ease-in-out"
+      }
     },
   },
   plugins: [],
