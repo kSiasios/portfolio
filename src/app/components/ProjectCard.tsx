@@ -35,7 +35,7 @@ const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
       </div>
       {/* <div className={`group-hover:block hidden absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[${colorSwatches[0]}] to-[${colorSwatches[0]}] z-40`}> */}
       <div
-        className={`group-hover:block group-hover:animate-fadeIn hidden absolute top-0 left-0 w-full h-full bg-gradient-to-t z-40 ${
+        className={`group-hover:block group-hover:animate-fadeIn hidden absolute top-0 left-0 w-full h-full bg-gradient-to-t z-20 ${
           gradientColor
             ? colorSwatches[gradientColor as keyof typeof colorSwatches]
             : "from-white to-white/0"

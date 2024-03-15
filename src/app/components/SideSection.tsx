@@ -7,20 +7,27 @@ import { ReactNode } from "react";
 interface ChildComponentProps {
   children?: ReactNode;
   className?: String;
+  useGrid?: Boolean;
 }
 
 const SideSection: React.FC<ChildComponentProps> = ({
   children,
   className,
+  useGrid = true,
 }) => {
   return (
     <div
       className={`${
         className ? className : ""
-      } w-full sm:w-1/2 relative h-screen`}
+      } w-full md:w-full md:w-1/2 relative md:h-full`}
     >
       {!children && <p>Hi there!</p>}
-      {children && <div className="grid grid-cols-2 h-full">{children}</div>}
+      {children && useGrid && (
+        <div className="grid grid-cols-2 h-full  w-full">{children}</div>
+      )}
+      {children && !useGrid && (
+        <div className="flex h-full md:w-1/2 w-full">{children}</div>
+      )}
     </div>
   );
 };
