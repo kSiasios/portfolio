@@ -17,7 +17,8 @@ import "slick-carousel/slick/slick.css";
 import ProjectCard from "./components/ProjectCard";
 import SideSection from "./components/SideSection";
 
-import image from "@/app/assets/SVGs/SideArrow.svg";
+import arrowSide from "@/app/assets/SVGs/SideArrow.svg";
+import arrowBelow from "@/app/assets/SVGs/DownArrow.svg";
 import {
   FaCss3Alt,
   FaGit,
@@ -29,6 +30,7 @@ import {
   FaReact,
   FaVuejs,
 } from "react-icons/fa";
+import ImageSlider from "./components/ImageSlider";
 
 export default function Home() {
   const featheredSidesStyle = {
@@ -74,23 +76,29 @@ export default function Home() {
             /> */}
           </div>
           <div className="absolute w-full h-full bg-gradient-to-t from-[#303030] to-[#30303000]"></div>
-          <div className="group-hover:flex group-hover:flex-col group-hover:gap-[40px] group-hover:animate-fadeIn hidden absolute w-full h-full backdrop-blur-xl bg-black/70 ps-16 pt-[25%] italic z-50">
+          <div className="group-hover:flex group-hover:flex-col group-hover:gap-[40px] group-hover:animate-fadeIn hidden absolute w-full h-full backdrop-blur-xl bg-black/70 ps-16 pt-32 italic z-50">
             {/* My Info */}
             <section className="flex flex-col gap-1">
               <p className="font-thin">Hello! I'm</p>
-              <h2 className="text-4xl font-semibold">Konstantinos Siasios</h2>
+              <h2 className="text-2xl sm:text-4xl font-semibold">
+                Konstantinos Siasios
+              </h2>
             </section>
             <section className="flex flex-col gap-1">
               <p className="font-thin">I am a junior</p>
-              <h3 className="text-2xl font-light">Frontend Developer</h3>
+              <h3 className="text-xl sm:text-2xl font-light">
+                Frontend Developer
+              </h3>
             </section>
             <section className="flex flex-col gap-6">
               <p className="font-thin mb-6">
                 My <span className="font-medium">skills</span> include
               </p>
-              <div style={featheredSidesStyle}>
+              <div style={featheredSidesStyle} className="overflow-hidden">
                 {/* Skill carousel */}
-                <Slider {...settings} className="flex gap-6">
+                <ImageSlider>
+                  {/* <Slider {...settings} className="flex gap-6"> */}
+                  {/* <FaReact /> */}
                   <FaReact className="text-[50px]" />
                   <FaNode className="text-[50px]" />
                   <FaVuejs className="text-[50px]" />
@@ -100,7 +108,8 @@ export default function Home() {
                   <FaPhp className="text-[50px]" />
                   <FaGit className="text-[50px]" />
                   <FaJava className="text-[50px]" />
-                </Slider>
+                  {/* </Slider> */}
+                </ImageSlider>
               </div>
             </section>
             <section className="">
@@ -111,16 +120,26 @@ export default function Home() {
                   <Image
                     aria-hidden="true"
                     alt=""
-                    className="absolute left-0 max-w-none w-[700%] drop-shadow-md"
-                    src={image}
+                    className="z-0 absolute left-0 top-[100%] max-w-none w-[700%] drop-shadow-md"
+                    src={arrowSide}
                     width={1000}
                     height={1000}
                   />
                 </span>
-                <span className="inline md:hidden font-medium">below!</span>
+                <span className="relative inline md:hidden font-medium">
+                  <Link href="#projects">below!</Link>
+                  <Image
+                    aria-hidden="true"
+                    alt=""
+                    className="z-0 absolute left-0 top-[100%] max-w-none w-[140%] drop-shadow-md"
+                    src={arrowBelow}
+                    width={1000}
+                    height={1000}
+                  />
+                </span>
               </p>
             </section>
-            <section className="">
+            <section className="z-10">
               <p className="font-thin">
                 <span className="font-medium">Find me</span> on
               </p>
@@ -163,7 +182,7 @@ export default function Home() {
             </section>
           </div>
         </SideSection>
-        <SideSection className="h-screen z-10">
+        <SideSection id="projects" className="h-screen z-10">
           <ProjectCard gradientColor="red" />
           <ProjectCard gradientColor="orange" />
           <ProjectCard gradientColor="green" />

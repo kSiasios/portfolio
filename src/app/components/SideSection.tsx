@@ -7,12 +7,14 @@ import { ReactNode } from "react";
 interface ChildComponentProps {
   children?: ReactNode;
   className?: String;
+  id?: string;
   useGrid?: Boolean;
 }
 
 const SideSection: React.FC<ChildComponentProps> = ({
   children,
   className,
+  id,
   useGrid = true,
 }) => {
   return (
@@ -20,6 +22,7 @@ const SideSection: React.FC<ChildComponentProps> = ({
       className={`${
         className ? className : ""
       } w-full md:w-full md:w-1/2 relative md:h-full`}
+      id={id ? id : ""}
     >
       {!children && <p>Hi there!</p>}
       {children && useGrid && (

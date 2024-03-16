@@ -38,14 +38,14 @@ export default function Navbar() {
         <button
           className={`${
             navIsOpen ? "after:rotate-45 before:rotate-[-45deg]" : ""
-          } flex items-center justify-center after:transition-rotate after:duration-300 after:ease-in-out before:transition-rotate before:duration-300 before:ease-in-out p-4 relative z-50 after:content-[' '] after:absolute after:h-2 after:w-10 after:bg-white before:content-[' '] before:absolute before:h-2 before:w-10 before:bg-white`}
+          } flex items-center justify-center after:transition-rotate after:duration-200 after:ease-in-out before:transition-rotate before:duration-200 before:ease-in-out p-4 relative z-50 after:content-[' '] after:absolute after:h-0.5 after:w-10 after:bg-white before:content-[' '] before:absolute before:h-0.5 before:w-10 before:bg-white`}
           onClick={toggleMenu}
         ></button>
       </nav>
       <aside
         className={`${navIsOpen ? "translate-x-[-100%]" : "pointer-events-none"}
         ${isInteractable ? "block" : "hidden"}
-        left-[100%] transition-right duration-300 ease-in-out italic shadow-[inset_0_0_0_2px_rgba(255,255,255,.15)] bg-black/45 backdrop-blur-lg z-40 fixed top-0 h-screen flex flex-col w-auto items-end p-4 pt-44 pl-16 pr-16 gap-14 text-sm sm:text-base`}
+        left-[100%] transition-right duration-200 ease-in-out italic shadow-[inset_0_0_0_2px_rgba(255,255,255,.15)] bg-black/45 backdrop-blur-lg z-40 fixed top-0 h-screen flex flex-col w-auto items-end p-4 pt-44 pl-16 pr-16 gap-14 text-sm sm:text-base`}
       >
         <section className="flex flex-col text-right items-end gap-6">
           <div>

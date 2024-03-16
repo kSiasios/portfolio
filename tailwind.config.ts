@@ -20,9 +20,14 @@ const config: Config = {
           "0%": { opacity: "100%" },
           "100%": { opacity: "0%" },
         },
+        scroll: {
+          "0%": { translate: "0%" },
+          "100%": { translate: "-50%" },
+        },
       },
       animation: {
         fadeIn: "fadeIn 100ms ease-in-out",
+        // scroll: "scroll 20s linear"
       },
     },
   },
