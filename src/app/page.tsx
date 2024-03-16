@@ -2,7 +2,13 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { IoCall, IoLogoGithub, IoLogoLinkedin, IoMail } from "react-icons/io5";
+import {
+  IoArrowDown,
+  IoCall,
+  IoLogoGithub,
+  IoLogoLinkedin,
+  IoMail,
+} from "react-icons/io5";
 // import Navbar from "./components/Navbar";
 import Navbar from "@/app/components/Navbar";
 import Slider from "react-slick";
@@ -11,7 +17,7 @@ import "slick-carousel/slick/slick.css";
 import ProjectCard from "./components/ProjectCard";
 import SideSection from "./components/SideSection";
 
-import image from "@/app/assets/SideArrow.svg";
+import image from "@/app/assets/SVGs/SideArrow.svg";
 import {
   FaCss3Alt,
   FaGit,
@@ -57,8 +63,15 @@ export default function Home() {
               width={1000}
               height={1000}
               alt="Image"
-              className="w-full h-full bg-cover"
+              className="w-full h-full object-cover"
             />
+            {/* <Image
+              src={portraitPicture}
+              width={1000}
+              height={1000}
+              alt="Image"
+              className="w-full h-full object-cover"
+            /> */}
           </div>
           <div className="absolute w-full h-full bg-gradient-to-t from-[#303030] to-[#30303000]"></div>
           <div className="group-hover:flex group-hover:flex-col group-hover:gap-[40px] group-hover:animate-fadeIn hidden absolute w-full h-full backdrop-blur-xl bg-black/70 ps-16 pt-[25%] italic z-50">
@@ -114,25 +127,38 @@ export default function Home() {
               <div className="flex gap-6 mt-6">
                 {/* Social Media Links */}
                 <Link
-                  className="text-[50px] hover:text-black focus:text-black"
+                  className="text-[50px] hover:text-white/50 focus:text-white/50"
                   href="#"
                 >
                   <IoLogoGithub />
                 </Link>
-                <Link className="text-[50px]" href="#">
+                <Link
+                  className="text-[50px] hover:text-white/50 focus:text-white/50"
+                  href="#"
+                >
                   <IoLogoLinkedin />
                 </Link>
-                <Link className="text-[50px]" href="#">
+                <Link
+                  className="text-[50px] hover:text-white/50 focus:text-white/50"
+                  href="#"
+                >
                   <IoMail />
                 </Link>
-                <Link className="text-[50px]" href="#">
+                <Link
+                  className="text-[50px] hover:text-white/50 focus:text-white/50"
+                  href="#"
+                >
                   <IoCall />
                 </Link>
               </div>
             </section>
             <section className="">
-              <Link className="underline" href="#">
-                Download my resume now!
+              <Link
+                className="underline inline-flex items-center gap-1"
+                href="#"
+              >
+                Download my resume now!{" "}
+                <IoArrowDown className="animate-bounce" />
               </Link>
             </section>
           </div>
@@ -142,34 +168,6 @@ export default function Home() {
           <ProjectCard gradientColor="orange" />
           <ProjectCard gradientColor="green" />
           <ProjectCard gradientColor="blue" />
-          {/* <Image
-            src="https://picsum.photos/200/300"
-            width={1000}
-            height={1000}
-            alt="Image"
-            className="w-full h-full bg-cover"
-          />
-          <Image
-            src="https://picsum.photos/200/300"
-            width={1000}
-            height={1000}
-            alt="Image"
-            className="w-full h-full bg-cover"
-          />
-          <Image
-            src="https://picsum.photos/200/300"
-            width={1000}
-            height={1000}
-            alt="Image"
-            className="w-full h-full bg-cover"
-          />
-          <Image
-            src="https://picsum.photos/200/300"
-            width={1000}
-            height={1000}
-            alt="Image"
-            className="w-full h-full bg-cover"
-          /> */}
         </SideSection>
       </div>
     </main>

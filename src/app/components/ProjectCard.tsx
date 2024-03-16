@@ -13,7 +13,7 @@ const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
     blue: "from-[#50CAFF] to-[#50CAFF]/0",
     indigo: "from-[#A68FFF] to-[#A68FFF]/0",
     purple: "from-[#DB75FF] to-[#DB75FF]/0",
-    pink: "from-[#FF7575] to-[#FF7EB4]/0",
+    pink: "from-[#FF7EB4] to-[#FF7EB4]/0",
   };
 
   // const colorClass = colorIndex
@@ -30,7 +30,7 @@ const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
           width={1000}
           height={1000}
           alt="Image"
-          className="h-full z-30"
+          className="h-full z-30 object-cover"
         />
       </div>
       {/* <div className={`group-hover:block hidden absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[${colorSwatches[0]}] to-[${colorSwatches[0]}] z-40`}> */}

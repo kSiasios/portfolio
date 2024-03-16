@@ -1,6 +1,6 @@
 "use client";
 
-import logo from "@/app/assets/Signature.svg";
+import logo from "@/app/assets/SVGs/Signature.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -9,9 +9,27 @@ import { LuExternalLink } from "react-icons/lu";
 
 export default function Navbar() {
   const [navIsOpen, setNavIsOpen] = useState(false);
+  const [isInteractable, setIsInteractable] = useState(false);
+
+  const toggleMenu = () => {
+    console.log(`Is nav open? ${navIsOpen}`);
+    if (navIsOpen != isInteractable) {
+      setIsInteractable(navIsOpen);
+      return;
+    }
+    if (!navIsOpen) {
+      // setIsInteractable(!isInteractable);
+      setTimeout(() => setNavIsOpen(!navIsOpen), 10);
+      setTimeout(() => setIsInteractable(!isInteractable), 0);
+    } else {
+      setTimeout(() => setNavIsOpen(!navIsOpen), 0);
+      setTimeout(() => setIsInteractable(!isInteractable), 300);
+    }
+  };
+
   return (
     <div>
-      <nav className="shadow-md shadow-[inset_0_-1px_rgba(255,255,255,.15)] h-28 backdrop-blur-lg z-40 bg-black/30 relative flex justify-end items-center pr-16">
+      <nav className="w-full shadow-md shadow-[inset_0_-1px_rgba(255,255,255,.15)] h-28 backdrop-blur-lg z-50 bg-black/30 fixed flex justify-end items-center pr-16">
         <Image
           src={logo}
           alt="logo"
@@ -21,18 +39,13 @@ export default function Navbar() {
           className={`${
             navIsOpen ? "after:rotate-45 before:rotate-[-45deg]" : ""
           } flex items-center justify-center after:transition-rotate after:duration-300 after:ease-in-out before:transition-rotate before:duration-300 before:ease-in-out p-4 relative z-50 after:content-[' '] after:absolute after:h-2 after:w-10 after:bg-white before:content-[' '] before:absolute before:h-2 before:w-10 before:bg-white`}
-          onClick={() => {
-            console.log(`Is nav open? ${navIsOpen}`);
-            setNavIsOpen(!navIsOpen);
-          }}
+          onClick={toggleMenu}
         ></button>
       </nav>
       <aside
-        className={`${
-          navIsOpen
-            ? "left-[100%] translate-x-[-100%]"
-            : "left-[100%] pointer-events-none"
-        } transition-right duration-300 ease-in-out italic shadow-[inset_0_0_0_2px_rgba(255,255,255,.15)] bg-black/45 backdrop-blur-lg z-30 fixed top-0 h-screen flex flex-col w-auto items-end p-4 pt-44 pl-16 pr-16 gap-14 text-sm sm:text-base`}
+        className={`${navIsOpen ? "translate-x-[-100%]" : "pointer-events-none"}
+        ${isInteractable ? "block" : "hidden"}
+        left-[100%] transition-right duration-300 ease-in-out italic shadow-[inset_0_0_0_2px_rgba(255,255,255,.15)] bg-black/45 backdrop-blur-lg z-40 fixed top-0 h-screen flex flex-col w-auto items-end p-4 pt-44 pl-16 pr-16 gap-14 text-sm sm:text-base`}
       >
         <section className="flex flex-col text-right items-end gap-6">
           <div>
@@ -43,8 +56,10 @@ export default function Navbar() {
           <ul className="flex flex-col gap-1">
             <li>
               <Link
-                className="hover:underline flex gap-1 justify-end items-center"
-                href="#"
+                className={`hover:underline flex gap-1 justify-end items-center ${
+                  navIsOpen ? "pointer-events-auto" : "pointer-events-none"
+                }`}
+                href="#1"
               >
                 Alexa Photos
                 <span className="inline-flex">
@@ -55,7 +70,7 @@ export default function Navbar() {
             <li>
               <Link
                 className="hover:underline flex gap-1 justify-end items-center"
-                href="#"
+                href="#2"
               >
                 Brunis Apartments
                 <span className="inline-flex">
@@ -66,7 +81,7 @@ export default function Navbar() {
             <li>
               <Link
                 className="hover:underline flex gap-1 justify-end items-center"
-                href="#"
+                href="#3"
               >
                 U Jacka
                 <span className="inline-flex">
@@ -77,7 +92,7 @@ export default function Navbar() {
             <li>
               <Link
                 className="hover:underline flex gap-1 justify-end items-center"
-                href="#"
+                href="#4"
               >
                 Nefeli's Rooms
                 <span className="inline-flex">
@@ -97,7 +112,7 @@ export default function Navbar() {
             <li>
               <Link
                 className="hover:underline flex gap-1 justify-end items-center"
-                href="#"
+                href="#5"
               >
                 Orthopaignia
                 <span className="inline-flex">
@@ -108,7 +123,7 @@ export default function Navbar() {
             <li>
               <Link
                 className="hover:underline flex gap-1 justify-end items-center"
-                href="#"
+                href="#6"
               >
                 Dating4Pets
                 <span className="inline-flex">
@@ -119,7 +134,7 @@ export default function Navbar() {
             <li>
               <Link
                 className="hover:underline flex gap-1 justify-end items-center"
-                href="#"
+                href="#7"
               >
                 Mechtopia
                 <span className="inline-flex">
@@ -130,7 +145,7 @@ export default function Navbar() {
             <li>
               <Link
                 className="hover:underline flex gap-1 justify-end items-center"
-                href="#"
+                href="#8"
               >
                 LoopoKrator
                 <span className="inline-flex">
@@ -141,11 +156,18 @@ export default function Navbar() {
           </ul>
         </section>
         <section className="hover:opacity-100 opacity-70 justify-self-end underline absolute bottom-[1.5rem]">
-          <Link href="#" className="inline-flex gap-1 items-center">
+          <Link href="#9" className="inline-flex gap-1 items-center">
             Download Resume <IoArrowDown className="animate-bounce" />
           </Link>
         </section>
       </aside>
+      <div
+        onClick={toggleMenu}
+        aria-hidden="true"
+        className={`${
+          navIsOpen ? "block" : "hidden"
+        } fixed top-0 right-0 w-screen h-screen z-30`}
+      ></div>
     </div>
   );
 }
