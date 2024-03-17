@@ -29,16 +29,21 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="w-full shadow-md shadow-[inset_0_-1px_rgba(255,255,255,.15)] h-28 backdrop-blur-lg z-50 bg-black/30 fixed flex justify-end items-center pr-16">
+      <nav className="w-full shadow-md shadow-[inset_0_-1px_rgba(255,255,255,.15)] h-28 backdrop-blur-lg z-50 bg-black/30 fixed flex justify-end items-center pr-8 xs:pr-16">
         <Image
           src={logo}
           alt="logo"
-          className="h-[calc(100%-2rem)] w-auto absolute left-1/2 translate-x-[-50%]"
+          className=" h-[calc(100%-4rem)] sm:h-[calc(100%-2rem)] w-auto absolute left-0 xs:left-1/2 translate-x-[1rem] xs:translate-x-[-50%]"
         />
         <button
           className={`${
-            navIsOpen ? "after:rotate-45 before:rotate-[-45deg]" : ""
-          } flex items-center justify-center after:transition-rotate after:duration-200 after:ease-in-out before:transition-rotate before:duration-200 before:ease-in-out p-4 relative z-50 after:content-[' '] after:absolute after:h-0.5 after:w-10 after:bg-white before:content-[' '] before:absolute before:h-0.5 before:w-10 before:bg-white`}
+            navIsOpen
+              ? "after:rotate-45 after:translate-y-[0px] before:rotate-[-45deg] before:translate-y-[0px]"
+              : ""
+          } flex items-center justify-center 
+          after:translate-y-[-5px] after:transition-rotate after:duration-200 after:ease-in-out after:content-[' '] after:absolute after:h-0.5 after:w-10 after:bg-white
+          before:translate-y-[5px] before:transition-rotate before:duration-200 before:ease-in-out before:content-[' '] before:absolute before:h-0.5 before:w-10 before:bg-white
+          p-6 relative z-50`}
           onClick={toggleMenu}
         ></button>
       </nav>

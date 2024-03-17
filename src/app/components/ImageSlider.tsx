@@ -13,6 +13,8 @@ const ImageSlider = ({ children, className }: SliderProps) => {
       {/* <div></div> */}
       {children}
       {children}
+      {children}
+      {children}
     </div>
   );
 };

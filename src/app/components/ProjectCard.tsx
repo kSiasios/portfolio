@@ -24,8 +24,8 @@ const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
   //   : `from-[${colorSwatches[0].toLowerCase()}] to-[${colorSwatches[0].toLowerCase()}]/0`;
 
   return (
-    <div className="relative group shadow-[inset_0_0_0_2px_rgba(255,255,255,.15)]">
-      <div className="absolute top-0 left-0 w-full h-full ">
+    <div className="relative group shadow-[inset_0_0_0_2px_rgba(255,255,255,1)]">
+      <div className="absolute top-0 left-0 w-full h-full shadow-[inset_0_0_0_2px_rgba(255,255,255,1)]">
         <Image
           src="https://picsum.photos/200/300"
           width={1000}
@@ -36,7 +36,7 @@ const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
       </div>
       {/* <div className={`group-hover:block hidden absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[${colorSwatches[0]}] to-[${colorSwatches[0]}] z-40`}> */}
       <div
-        className={`items-center justify-center group-hover:opacity-1 group-hover:animate-fadeIn opacity-0 flex absolute top-0 left-0 w-full h-full bg-gradient-to-t z-20 ${
+        className={` shadow-[inset_0_0_0_2px_rgba(255,255,255,.15)] items-center justify-center group-hover:opacity-100 focus-within:opacity-100 group-hover:animate-fadeIn focus-within:animate-fadeIn opacity-0 flex absolute top-0 left-0 w-full h-full bg-gradient-to-t z-20 ${
           gradientColor
             ? colorSwatches[gradientColor as keyof typeof colorSwatches]
             : "from-white to-white/0"
