@@ -82,12 +82,12 @@ export default function Home() {
               overflow-y-hidden
             overflow-x-hidden opacity-0 
             group-hover:opacity-100 focus-within:opacity-100 group-hover:animate-fadeIn focus-within:animate-fadeIn 
-            justify-center flex flex-col gap-[40px] absolute w-full h-full 
-            backdrop-blur-xl bg-black/70 ps-8 xs:ps-16 pt-32 italic z-50"
+            justify-center flex flex-col gap-4 xxs:gap-6 md:gap-[40px] absolute w-full h-full 
+            backdrop-blur-xl bg-black/70 ps-4 xxs:ps-16 pt-16 xxs:pt-32 italic z-50"
             >
               {/* My Info */}
               <section className="flex flex-col gap-1">
-                <p className="font-thin">Hello! I'm</p>
+                <p className="font-thin">Hello! I&apos;m</p>
                 <h2 className="text-2xl sm:text-4xl font-semibold">
                   Konstantinos Siasios
                 </h2>
@@ -98,7 +98,7 @@ export default function Home() {
                   Frontend Developer
                 </h3>
               </section>
-              <section className="flex flex-col gap-6">
+              <section className="flex flex-col gap-3 xxs:gap-6">
                 <p className="font-thin mb-6">
                   My <span className="font-medium">skills</span> include
                 </p>
@@ -107,15 +107,15 @@ export default function Home() {
                   <ImageSlider>
                     {/* <Slider {...settings} className="flex gap-6"> */}
                     {/* <FaReact /> */}
-                    <FaReact className="text-[50px]" />
-                    <FaNode className="text-[50px]" />
-                    <FaVuejs className="text-[50px]" />
-                    <FaJs className="text-[50px]" />
-                    <FaHtml5 className="text-[50px]" />
-                    <FaCss3Alt className="text-[50px]" />
-                    <FaPhp className="text-[50px]" />
-                    <FaGit className="text-[50px]" />
-                    <FaJava className="text-[50px]" />
+                    <FaReact className="text-[30px] xs:text-[50px]" />
+                    <FaNode className="text-[30px] xs:text-[50px]" />
+                    <FaVuejs className="text-[30px] xs:text-[50px]" />
+                    <FaJs className="text-[30px] xs:text-[50px]" />
+                    <FaHtml5 className="text-[30px] xs:text-[50px]" />
+                    <FaCss3Alt className="text-[30px] xs:text-[50px]" />
+                    <FaPhp className="text-[30px] xs:text-[50px]" />
+                    <FaGit className="text-[30px] xs:text-[50px]" />
+                    <FaJava className="text-[30px] xs:text-[50px]" />
                     {/* </Slider> */}
                   </ImageSlider>
                 </div>
@@ -159,25 +159,25 @@ export default function Home() {
                 <div className="flex gap-6 mt-6 flex-wrap">
                   {/* Social Media Links */}
                   <Link
-                    className="text-[50px] hover:text-white/50 focus:text-white/50"
+                    className="text-[30px] xs:text-[50px] hover:text-white/50 focus:text-white/50"
                     href="#"
                   >
                     <IoLogoGithub />
                   </Link>
                   <Link
-                    className="text-[50px] hover:text-white/50 focus:text-white/50"
+                    className="text-[30px] xs:text-[50px] hover:text-white/50 focus:text-white/50"
                     href="#"
                   >
                     <IoLogoLinkedin />
                   </Link>
                   <Link
-                    className="text-[50px] hover:text-white/50 focus:text-white/50"
+                    className="text-[30px] xs:text-[50px] hover:text-white/50 focus:text-white/50"
                     href="#"
                   >
                     <IoMail />
                   </Link>
                   <Link
-                    className="text-[50px] hover:text-white/50 focus:text-white/50"
+                    className="text-[30px] xs:text-[50px] hover:text-white/50 focus:text-white/50"
                     href="#"
                   >
                     <IoCall />
@@ -185,7 +185,7 @@ export default function Home() {
                 </div>
               </section>
               <section className="inline-flex items-center gap-1">
-                <Link className="underline" href="#">
+                <Link className="underline text-sm xxs:text-base" href="#">
                   Download my resume now!{" "}
                 </Link>
                 <div>

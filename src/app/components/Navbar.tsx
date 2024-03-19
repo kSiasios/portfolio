@@ -50,119 +50,125 @@ export default function Navbar() {
       <aside
         className={`${navIsOpen ? "translate-x-[-100%]" : "pointer-events-none"}
         ${isInteractable ? "block" : "hidden"}
-        left-[100%] transition-right duration-200 ease-in-out italic shadow-[inset_0_0_0_2px_rgba(255,255,255,.15)] bg-black/45 backdrop-blur-lg z-40 fixed top-0 h-screen flex flex-col w-auto items-end p-4 pt-44 pl-16 pr-16 gap-14 text-sm sm:text-base`}
+        left-[100%] transition-right duration-200 ease-in-out italic shadow-[inset_0_0_0_2px_rgba(255,255,255,.15)] bg-black/45 backdrop-blur-lg z-40 fixed top-0 h-screen 
+        flex flex-col w-auto items-end justify-between p-10 pt-36 xxs:pt-44 px-10 xxs:px-16 gap-14 text-sm sm:text-base`}
       >
         <section className="flex flex-col text-right items-end gap-6">
-          <div>
-            <h4 className="text-[1.2rem] sm:text-[2rem] font-bold text-wrap sm:text-nowrap">
-              Professional Projects
-            </h4>
-          </div>
-          <ul className="flex flex-col gap-1">
-            <li>
-              <Link
-                className={`hover:underline flex gap-1 justify-end items-center ${
-                  navIsOpen ? "pointer-events-auto" : "pointer-events-none"
-                }`}
-                href="#1"
-              >
-                Alexa Photos
-                <span className="inline-flex">
-                  <LuExternalLink />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="hover:underline flex gap-1 justify-end items-center"
-                href="#2"
-              >
-                Brunis Apartments
-                <span className="inline-flex">
-                  <LuExternalLink />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="hover:underline flex gap-1 justify-end items-center"
-                href="#3"
-              >
-                U Jacka
-                <span className="inline-flex">
-                  <LuExternalLink />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="hover:underline flex gap-1 justify-end items-center"
-                href="#4"
-              >
-                Nefeli's Rooms
-                <span className="inline-flex">
-                  <LuExternalLink />
-                </span>
-              </Link>
-            </li>
-          </ul>
+          <section className="flex flex-col text-right items-end gap-6">
+            <div>
+              <h4 className="text-[1.2rem] sm:text-[2rem] font-bold text-wrap sm:text-nowrap">
+                Professional Projects
+              </h4>
+            </div>
+            <ul className="flex flex-col gap-1">
+              <li>
+                <Link
+                  className={`hover:underline flex gap-1 justify-end items-center ${
+                    navIsOpen ? "pointer-events-auto" : "pointer-events-none"
+                  }`}
+                  href="#1"
+                >
+                  Alexa Photos
+                  <span className="inline-flex">
+                    <LuExternalLink />
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:underline flex gap-1 justify-end items-center"
+                  href="#2"
+                >
+                  Brunis Apartments
+                  <span className="inline-flex">
+                    <LuExternalLink />
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:underline flex gap-1 justify-end items-center"
+                  href="#3"
+                >
+                  U Jacka
+                  <span className="inline-flex">
+                    <LuExternalLink />
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:underline flex gap-1 justify-end items-center"
+                  href="#4"
+                >
+                  Nefeli&apos;s Rooms
+                  <span className="inline-flex">
+                    <LuExternalLink />
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </section>
+          <section className="flex flex-col text-right items-end gap-6">
+            <div>
+              <h4 className="text-[1.2rem] sm:text-[2rem] font-bold text-wrap sm:text-nowrap">
+                Other Projects
+              </h4>
+            </div>
+            <ul className="flex flex-col gap-1">
+              <li>
+                <Link
+                  className="hover:underline flex gap-1 justify-end items-center"
+                  href="#5"
+                >
+                  Orthopaignia
+                  <span className="inline-flex">
+                    <LuExternalLink />
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:underline flex gap-1 justify-end items-center"
+                  href="#6"
+                >
+                  Dating4Pets
+                  <span className="inline-flex">
+                    <LuExternalLink />
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:underline flex gap-1 justify-end items-center"
+                  href="#7"
+                >
+                  Mechtopia
+                  <span className="inline-flex">
+                    <LuExternalLink />
+                  </span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="hover:underline flex gap-1 justify-end items-center"
+                  href="#8"
+                >
+                  LoopoKrator
+                  <span className="inline-flex">
+                    <LuExternalLink />
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </section>
         </section>
-        <section className="flex flex-col text-right items-end gap-6">
-          <div>
-            <h4 className="text-[1.2rem] sm:text-[2rem] font-bold text-wrap sm:text-nowrap">
-              Other Projects
-            </h4>
-          </div>
-          <ul className="flex flex-col gap-1">
-            <li>
-              <Link
-                className="hover:underline flex gap-1 justify-end items-center"
-                href="#5"
-              >
-                Orthopaignia
-                <span className="inline-flex">
-                  <LuExternalLink />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="hover:underline flex gap-1 justify-end items-center"
-                href="#6"
-              >
-                Dating4Pets
-                <span className="inline-flex">
-                  <LuExternalLink />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="hover:underline flex gap-1 justify-end items-center"
-                href="#7"
-              >
-                Mechtopia
-                <span className="inline-flex">
-                  <LuExternalLink />
-                </span>
-              </Link>
-            </li>
-            <li>
-              <Link
-                className="hover:underline flex gap-1 justify-end items-center"
-                href="#8"
-              >
-                LoopoKrator
-                <span className="inline-flex">
-                  <LuExternalLink />
-                </span>
-              </Link>
-            </li>
-          </ul>
-        </section>
-        <section className="hover:opacity-100 opacity-70 justify-self-end underline absolute bottom-[1.5rem]">
-          <Link href="#9" className="inline-flex gap-1 items-center">
-            Download Resume{" "}
+        <section className="hover:opacity-100 opacity-70 underline">
+          <Link
+            href="#9"
+            className="inline-flex flex-nowrap gap-1 items-center"
+          >
+            Resume{" "}
             <div>
               <IoSave className="absolute animate-ping" />
               <IoSave />
