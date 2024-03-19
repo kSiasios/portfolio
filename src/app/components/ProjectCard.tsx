@@ -7,24 +7,54 @@ interface Props {
 }
 
 const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
-  const colorSwatches = {
-    red: "from-[#FF7575] to-[#FF7575]/0",
-    orange: "from-[#FFCC7E] to-[#FFCC7E]/0",
-    green: "from-[#50FFC0] to-[#50FFC0]/0",
-    blue: "from-[#50CAFF] to-[#50CAFF]/0",
-    indigo: "from-[#A68FFF] to-[#A68FFF]/0",
-    purple: "from-[#DB75FF] to-[#DB75FF]/0",
-    pink: "from-[#FF7EB4] to-[#FF7EB4]/0",
+  const colors = {
+    red: "#FF7575",
+    orange: "#FFCC7E",
+    green: "#50FFC0",
+    blue: "#50CAFF",
+    indigo: "#A68FFF",
+    purple: "#DB75FF",
+    pink: "#FF7EB4",
+  };
+
+  const colorBG = {
+    red: `bg-[${colors["red"]}]`,
+    orange: `bg-[${colors["orange"]}]`,
+    green: `bg-[${colors["green"]}]`,
+    blue: `bg-[${colors["blue"]}]`,
+    indigo: `bg-[${colors["indigo"]}]`,
+    purple: `bg-[${colors["purple"]}]`,
+    pink: `bg-[${colors["pink"]}]`,
+  };
+
+  const pseudoColorBG = {
+    red: `before:bg-[${colors["red"]}]`,
+    orange: `before:bg-[${colors["orange"]}]`,
+    green: `before:bg-[${colors["green"]}]`,
+    blue: `before:bg-[${colors["blue"]}]`,
+    indigo: `before:bg-[${colors["indigo"]}]`,
+    purple: `before:bg-[${colors["purple"]}]`,
+    pink: `before:bg-[${colors["pink"]}]`,
+  };
+
+  const colorGradients = {
+    red: `from-[${colors["red"]}] to-[${colors["red"]}]/0`,
+    orange: `from-[${colors["orange"]}] to-[${colors["orange"]}]/0`,
+    green: `from-[${colors["green"]}] to-[${colors["green"]}]/0`,
+    blue: `from-[${colors["blue"]}] to-[${colors["blue"]}]/0`,
+    indigo: `from-[${colors["indigo"]}] to-[${colors["indigo"]}]/0`,
+    purple: `from-[${colors["purple"]}] to-[${colors["purple"]}]/0`,
+    pink: `from-[${colors["pink"]}] to-[${colors["pink"]}]/0`,
   };
 
   // const colorClass = colorIndex
-  //   ? `from-[${colorSwatches[colorIndex].toLowerCase()}] to-[${colorSwatches[
+  //   ? `from-[${colorGradients[colorIndex].toLowerCase()}] to-[${colorGradients[
   //       colorIndex
   //     ].toLowerCase()}]/0`
-  //   : `from-[${colorSwatches[0].toLowerCase()}] to-[${colorSwatches[0].toLowerCase()}]/0`;
+  //   : `from-[${colorGradients[0].toLowerCase()}] to-[${colorGradients[0].toLowerCase()}]/0`;
 
   return (
-    <div className="relative group shadow-[inset_0_0_0_2px_rgba(255,255,255,1)]">
+    <div className="relative group shadow-[inset_0_0_0_2px_rgba(255,255,255,1)] z-0">
       <div className="absolute top-0 left-0 w-full h-full shadow-[inset_0_0_0_2px_rgba(255,255,255,1)]">
         <Image
           src="https://picsum.photos/200/300"
@@ -34,11 +64,11 @@ const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
           className="h-full z-30 object-cover"
         />
       </div>
-      {/* <div className={`group-hover:block hidden absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[${colorSwatches[0]}] to-[${colorSwatches[0]}] z-40`}> */}
+      {/* <div className={`group-hover:block hidden absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[${colorGradients[0]}] to-[${colorGradients[0]}] z-40`}> */}
       <div
         className={` shadow-[inset_0_0_0_2px_rgba(255,255,255,.15)] items-center justify-center group-hover:opacity-100 focus-within:opacity-100 group-hover:animate-fadeIn focus-within:animate-fadeIn opacity-0 flex absolute top-0 left-0 w-full h-full bg-gradient-to-t z-20 ${
           gradientColor
-            ? colorSwatches[gradientColor as keyof typeof colorSwatches]
+            ? colorGradients[gradientColor as keyof typeof colorGradients]
             : "from-white to-white/0"
         }`}
       >
@@ -47,6 +77,13 @@ const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
           Open Project <LuExternalLink />
         </button>
       </div>
+      <div
+        className={`${
+          gradientColor
+            ? colorBG[gradientColor as keyof typeof colorBG]
+            : "bg-cyan-400"
+        } xs:hidden absolute h-full w-5 z-50`}
+      ></div>
     </div>
   );
 };

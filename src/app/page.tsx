@@ -4,10 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   IoArrowDown,
+  IoArrowForward,
   IoCall,
   IoLogoGithub,
   IoLogoLinkedin,
   IoMail,
+  IoSave,
 } from "react-icons/io5";
 // import Navbar from "./components/Navbar";
 import Navbar from "@/app/components/Navbar";
@@ -16,8 +18,6 @@ import "slick-carousel/slick/slick.css";
 import ProjectCard from "./components/ProjectCard";
 import SideSection from "./components/SideSection";
 
-import arrowBelow from "@/app/assets/SVGs/DownArrow.svg";
-import arrowSide from "@/app/assets/SVGs/SideArrow.svg";
 import {
   FaCss3Alt,
   FaGit,
@@ -29,6 +29,7 @@ import {
   FaReact,
   FaVuejs,
 } from "react-icons/fa";
+import BGDecoration from "./components/BGDecoration";
 import ImageSlider from "./components/ImageSlider";
 
 export default function Home() {
@@ -52,11 +53,11 @@ export default function Home() {
   return (
     <main className="h-screen font-Montserrat bg-gradient-to-br to-black from-zinc-900">
       <Navbar />
-      <div className="md:w-screen flex items-center justify-center absolute shadow-lg">
+      <div className="w-full md:w-screen flex items-center justify-center absolute shadow-lg">
         <div className="max-w-screen-2xl flex flex-col md:flex-row w-full top-0 left-0 h-max md:h-screen">
           <SideSection
             useGrid={false}
-            className="h-full group overflow-x-visible z-20 h-screen"
+            className="h-screen sm:h-full group overflow-x-visible z-20"
           >
             <div className="md:absolute w-full md:w-full h-full">
               <Image
@@ -76,7 +77,14 @@ export default function Home() {
             </div>
             <div className="absolute w-full h-full bg-gradient-to-t from-[#303030] to-[#30303000]"></div>
             {/* <div className="overflow-x-hidden group-hover:flex group-hover:flex-col group-hover:gap-[40px] group-hover:animate-fadeIn hidden absolute w-full h-full backdrop-blur-xl bg-black/70 ps-8 xs:ps-16 pt-32 italic z-50"> */}
-            <div className="overflow-x-hidden opacity-0 group-hover:opacity-100 focus-within:opacity-100 flex flex-col gap-[40px] group-hover:animate-fadeIn focus-within:animate-fadeIn absolute w-full h-full backdrop-blur-xl bg-black/70 ps-8 xs:ps-16 pt-32 italic z-50">
+            <div
+              className="
+              overflow-y-hidden
+            overflow-x-hidden opacity-0 
+            group-hover:opacity-100 focus-within:opacity-100 group-hover:animate-fadeIn focus-within:animate-fadeIn 
+            justify-center flex flex-col gap-[40px] absolute w-full h-full 
+            backdrop-blur-xl bg-black/70 ps-8 xs:ps-16 pt-32 italic z-50"
+            >
               {/* My Info */}
               <section className="flex flex-col gap-1">
                 <p className="font-thin">Hello! I'm</p>
@@ -113,29 +121,34 @@ export default function Home() {
                 </div>
               </section>
               <section className="relative">
-                <p className="font-thin">
+                <p className="font-thin relative">
                   You can find some of my projects{" "}
-                  <span className="relative hidden md:inline font-medium z-[9999]">
+                  <span className="relative md:inline-flex md:justify-center md:items-center md:gap-1 hidden font-medium">
                     there!
-                    <Image
+                    {/* <Image
                       aria-hidden="true"
                       alt="Arrow pointing to the side"
-                      className="z-[9999] absolute left-0 top-[100%] max-w-none w-[700%] drop-shadow-md"
+                      className="absolute left-0 top-[100%] max-w-none w-[700%] drop-shadow-md"
                       src={arrowSide}
                       width={1000}
                       height={1000}
-                    />
+                    /> */}
+                    {/* <IoArrowDown className="drop-shadow-md -rotate-90 animate-bounce" /> */}
+                    <IoArrowForward className="drop-shadow-md animate-bounceSide" />
                   </span>
-                  <span className="relative inline md:hidden font-medium">
-                    <Link href="#projects">below!</Link>
-                    <Image
+                  <span className="relative inline-flex justify-center items-center gap-1 md:hidden font-medium">
+                    <Link href="#projects" className="hover:underline">
+                      below!
+                    </Link>
+                    {/* <Image
                       aria-hidden="true"
                       alt="Arrow pointing below"
-                      className="z-0 absolute left-0 top-[100%] max-w-none w-[140%] drop-shadow-md"
+                      className="absolute left-0 top-[100%] max-w-none w-[140%] drop-shadow-md"
                       src={arrowBelow}
                       width={1000}
                       height={1000}
-                    />
+                    /> */}
+                    <IoArrowDown className="animate-bounce" />
                   </span>
                 </p>
               </section>
@@ -171,14 +184,14 @@ export default function Home() {
                   </Link>
                 </div>
               </section>
-              <section className="">
-                <Link
-                  className="underline inline-flex items-center gap-1"
-                  href="#"
-                >
+              <section className="inline-flex items-center gap-1">
+                <Link className="underline" href="#">
                   Download my resume now!{" "}
-                  <IoArrowDown className="animate-bounce" />
                 </Link>
+                <div>
+                  <IoSave className="absolute animate-ping" />
+                  <IoSave />
+                </div>
               </section>
             </div>
           </SideSection>
@@ -190,15 +203,7 @@ export default function Home() {
           </SideSection>
         </div>
       </div>
-      <div aria-hidden className="opacity-55">
-        <div className="w-96 h-96 rounded-full blur-[200px] fixed left-0 top-0 bg-[#A68FFF] opacity-50"></div>
-        <div className="w-52 h-52 blur-[200px] fixed left-0 top-0 bg-[#50CAFF] opacity-75"></div>
-        <div className="w-24 h-24 rounded blur-[200px] fixed left-0 top-0 bg-[#50FFC0]"></div>
-        {/* <div className="w-52 h-52 rounded-full blur-[200px] fixed right-0 top-0 bg-[#FFCC7E]"></div> */}
-        <div className="w-96 h-52 rounded-full blur-[100px] fixed right-0 bottom-0 bg-[#DB75FF] opacity-50"></div>
-        <div className="w-52 h-96 blur-[100px] fixed right-0 bottom-0 bg-[#FF7EB4] opacity-70"></div>
-        <div className="w-72 h-80 rounded blur-[200px] fixed right-0 bottom-0 bg-[#FF7575] opacity-60"></div>
-      </div>
+      <BGDecoration />
     </main>
   );
 }

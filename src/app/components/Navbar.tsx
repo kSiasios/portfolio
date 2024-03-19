@@ -4,7 +4,7 @@ import logo from "@/app/assets/SVGs/Signature.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { IoArrowDown } from "react-icons/io5";
+import { IoSave } from "react-icons/io5";
 import { LuExternalLink } from "react-icons/lu";
 
 export default function Navbar() {
@@ -12,7 +12,7 @@ export default function Navbar() {
   const [isInteractable, setIsInteractable] = useState(false);
 
   const toggleMenu = () => {
-    console.log(`Is nav open? ${navIsOpen}`);
+    // console.log(`Is nav open? ${navIsOpen}`);
     if (navIsOpen != isInteractable) {
       setIsInteractable(navIsOpen);
       return;
@@ -29,16 +29,16 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="w-full shadow-md shadow-[inset_0_-1px_rgba(255,255,255,.15)] h-28 backdrop-blur-lg z-50 bg-black/30 fixed flex justify-end items-center pr-8 xs:pr-16">
+      <nav className="w-full shadow-md h-28 backdrop-blur-lg z-50 bg-black/30 fixed flex justify-end items-center pr-8 xs:pr-16">
         <Image
           src={logo}
           alt="logo"
-          className=" h-[calc(100%-4rem)] sm:h-[calc(100%-2rem)] w-auto absolute left-0 xs:left-1/2 translate-x-[1rem] xs:translate-x-[-50%]"
+          className="pointer-events-none h-[calc(100%-4rem)] sm:h-[calc(100%-2rem)] w-auto absolute left-0 xs:left-1/2 translate-x-[1rem] xs:translate-x-[-50%]"
         />
         <button
           className={`${
             navIsOpen
-              ? "after:rotate-45 after:translate-y-[0px] before:rotate-[-45deg] before:translate-y-[0px]"
+              ? "after:rotate-45 after:translate-y-[5px] before:rotate-[-45deg] before:translate-y-[0px]"
               : ""
           } flex items-center justify-center 
           after:translate-y-[-5px] after:transition-rotate after:duration-200 after:ease-in-out after:content-[' '] after:absolute after:h-0.5 after:w-10 after:bg-white
@@ -162,7 +162,11 @@ export default function Navbar() {
         </section>
         <section className="hover:opacity-100 opacity-70 justify-self-end underline absolute bottom-[1.5rem]">
           <Link href="#9" className="inline-flex gap-1 items-center">
-            Download Resume <IoArrowDown className="animate-bounce" />
+            Download Resume{" "}
+            <div>
+              <IoSave className="absolute animate-ping" />
+              <IoSave />
+            </div>
           </Link>
         </section>
       </aside>
