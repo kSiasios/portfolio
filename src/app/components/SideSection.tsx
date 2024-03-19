@@ -21,7 +21,7 @@ const SideSection: React.FC<ChildComponentProps> = ({
     <div
       className={`${
         className ? className : ""
-      } w-full md:w-full md:w-1/2 relative md:h-full overflow-hidden`}
+      } w-full md:w-1/2 relative md:h-full overflow-hidden`}
       id={id ? id : ""}
     >
       {!children && <p>Hi there!</p>}
