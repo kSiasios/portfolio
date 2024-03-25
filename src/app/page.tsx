@@ -185,7 +185,12 @@ export default function Home() {
                 </div>
               </section>
               <section className="inline-flex items-center gap-1">
-                <Link className="underline text-sm xxs:text-base" href="#">
+                <Link
+                  target="_blank"
+                  download="Konstantinos Siasios - Resume"
+                  href="./public_assets/resume/Konstantinos Siasios - Resume.pdf"
+                  className="underline text-sm xxs:text-base"
+                >
                   Download my resume now!{" "}
                 </Link>
                 <div>

@@ -165,7 +165,9 @@ export default function Navbar() {
         </section>
         <section className="hover:opacity-100 opacity-70 underline">
           <Link
-            href="#9"
+            target="_blank"
+            download="Konstantinos Siasios - Resume"
+            href="./public_assets/resume/Konstantinos Siasios - Resume.pdf"
             className="inline-flex flex-nowrap gap-1 items-center"
           >
             Resume{" "}
