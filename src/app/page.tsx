@@ -57,8 +57,14 @@ export default function Home() {
         <div className="max-w-screen-2xl flex flex-col md:flex-row w-full top-0 left-0 h-max md:h-screen">
           <SideSection
             useGrid={false}
-            className="h-screen sm:h-full group overflow-x-visible z-20"
+            className="h-screen sm:h-full group overflow-x-hidden z-20 relative"
           >
+            {/* <div
+              aria-hidden
+              className="group-hover:hidden group-focus-within:hidden pointer-events-none animate-ping flex justify-center items-center text-3xl absolute w-full h-full top-0 left-0 z-[9999]"
+            >
+              HOVER ME!
+            </div> */}
             <div className="md:absolute w-full md:w-full h-full">
               <Image
                 src="https://picsum.photos/200/300"
@@ -201,10 +207,34 @@ export default function Home() {
             </div>
           </SideSection>
           <SideSection id="projects" className="h-screen z-10">
-            <ProjectCard gradientColor="red" />
-            <ProjectCard gradientColor="orange" />
-            <ProjectCard gradientColor="green" />
-            <ProjectCard gradientColor="blue" />
+            <ProjectCard
+              gradientColor="red"
+              coverImage="/public_assets/banners/orthopaignia.png"
+            />
+            <ProjectCard
+              gradientColor="orange"
+              coverImage="/public_assets/banners/loopokrator.png"
+            />
+            <ProjectCard
+              gradientColor="blue"
+              coverImage="/public_assets/banners/nefelis_rooms.png"
+            />
+            <ProjectCard
+              gradientColor="gold"
+              coverImage="https://www.ujacka.gr/images/ujackaLogo.png"
+            />
+            <ProjectCard
+              gradientColor="green"
+              coverImage="https://www.brunisapartments.com/logo.svg"
+            />
+            <ProjectCard
+              gradientColor="indigo"
+              coverImage="https://www.alexaphotos.com/logo.svg"
+            />
+            <ProjectCard
+              gradientColor="pink"
+              coverImage="/public_assets/banners/mechtopia.png"
+            />
           </SideSection>
         </div>
       </div>

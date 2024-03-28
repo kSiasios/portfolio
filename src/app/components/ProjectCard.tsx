@@ -4,9 +4,14 @@ import { LuExternalLink } from "react-icons/lu";
 interface Props {
   gradientColor?: String;
   className?: String;
+  coverImage?: string;
 }
 
-const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
+const ProjectCard: React.FC<Props> = ({
+  gradientColor,
+  className,
+  coverImage,
+}) => {
   const colors = {
     red: "#FF7575",
     orange: "#FFCC7E",
@@ -15,6 +20,7 @@ const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
     indigo: "#A68FFF",
     purple: "#DB75FF",
     pink: "#FF7EB4",
+    gold: "#a18c47",
   };
 
   const colorBG = {
@@ -25,6 +31,7 @@ const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
     indigo: `bg-[#A68FFF]`,
     purple: `bg-[#DB75FF]`,
     pink: `bg-[#FF7EB4]`,
+    gold: "bg-[#a18c47]",
   };
 
   const colorGradients = {
@@ -35,6 +42,7 @@ const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
     indigo: `from-[#A68FFF] to-[#A68FFF]/0`,
     purple: `from-[#DB75FF] to-[#DB75FF]/0`,
     pink: `from-[#FF7EB4] to-[#FF7EB4]/0`,
+    gold: "from-[#a18c47] to-[#a18c47]/0",
   };
 
   // const colorClass = colorIndex
@@ -44,10 +52,16 @@ const ProjectCard: React.FC<Props> = ({ gradientColor, className }) => {
   //   : `from-[${colorGradients[0].toLowerCase()}] to-[${colorGradients[0].toLowerCase()}]/0`;
 
   return (
-    <div className="relative group shadow-[inset_0_0_0_2px_rgba(255,255,255,1)] z-0">
-      <div className="absolute top-0 left-0 w-full h-full shadow-[inset_0_0_0_2px_rgba(255,255,255,1)]">
+    <div className="relative group z-0 bg-gradient-to-br to-black from-zinc-900">
+      {/* <div
+        aria-hidden
+        className="group-hover:hidden group-focus-within:hidden pointer-events-none animate-ping flex justify-center items-center text-3xl absolute w-full h-full top-0 left-0 z-[9999]"
+      >
+        HOVER ME!
+      </div> */}
+      <div className="absolute top-0 left-0 w-full h-full">
         <Image
-          src="https://picsum.photos/200/300"
+          src={coverImage ? coverImage : "https://picsum.photos/200/300"}
           width={1000}
           height={1000}
           alt="Image"

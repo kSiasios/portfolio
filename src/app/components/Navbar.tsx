@@ -33,14 +33,14 @@ export default function Navbar() {
         <Image
           src={logo}
           alt="logo"
-          className="pointer-events-none h-[calc(100%-4rem)] sm:h-[calc(100%-2rem)] w-auto absolute left-0 xs:left-1/2 translate-x-[1rem] xs:translate-x-[-50%]"
+          className="animate-neon pointer-events-none h-[calc(100%-4rem)] sm:h-[calc(100%-2rem)] w-auto absolute left-0 xs:left-1/2 translate-x-[1rem] xs:translate-x-[-50%]"
         />
         <button
           className={`${
             navIsOpen
               ? "after:rotate-45 after:translate-y-[5px] before:rotate-[-45deg] before:translate-y-[0px]"
               : ""
-          } flex items-center justify-center 
+          } flex items-center justify-center animate-slideLeft
           after:translate-y-[-5px] after:transition-rotate after:duration-200 after:ease-in-out after:content-[' '] after:absolute after:h-0.5 after:w-10 after:bg-white
           before:translate-y-[5px] before:transition-rotate before:duration-200 before:ease-in-out before:content-[' '] before:absolute before:h-0.5 before:w-10 before:bg-white
           p-6 relative z-50`}
