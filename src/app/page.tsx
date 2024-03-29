@@ -74,12 +74,12 @@ export default function Home() {
                 className="w-full h-full object-cover"
               />
               {/* <Image
-              src={portraitPicture}
-              width={1000}
-              height={1000}
-              alt="Image"
-              className="w-full h-full object-cover"
-            /> */}
+                src="/public_assets/portrait.jpg"
+                width={1000}
+                height={1000}
+                alt="Image"
+                className="w-full h-full object-cover"
+              /> */}
             </div>
             <div className="absolute w-full h-full bg-gradient-to-t from-[#303030] to-[#30303000]"></div>
             {/* <div className="overflow-x-hidden group-hover:flex group-hover:flex-col group-hover:gap-[40px] group-hover:animate-fadeIn hidden absolute w-full h-full backdrop-blur-xl bg-black/70 ps-8 xs:ps-16 pt-32 italic z-50"> */}
