@@ -21,7 +21,7 @@ const SideSection: React.FC<ChildComponentProps> = ({
     <div
       className={`${
         className ? className : ""
-      } w-full md:w-1/2 relative md:h-full overflow-hidden bg-gradient-to-br to-black from-zinc-900`}
+      } w-full md:w-1/2 relative md:h-full overflow-hidden bg-gradient-to-br to-black/10 from-zinc-900/10 backdrop-blur-3xl`}
       id={id ? id : ""}
     >
       {!children && <p>Hi there!</p>}
