@@ -31,12 +31,22 @@ import {
 } from "react-icons/fa";
 import BGDecoration from "./components/BGDecoration";
 import ImageSlider from "./components/ImageSlider";
+import projects from "./utils/project_data";
+
+// let projects = require("@/app/assets/project_data.json");
 
 export default function Home() {
+  // console.log(projects);
   const featheredSidesStyle = {
     maskImage:
       "linear-gradient(to right, transparent, black 5rem, black calc(100% - 5rem), transparent)",
   };
+
+  const projectsData = Object.values(projects);
+
+  // projectsData.forEach((project) => {
+  //   console.log(project);
+  // });
 
   const settings = {
     dots: false,
@@ -206,35 +216,32 @@ export default function Home() {
               </section>
             </div>
           </SideSection>
-          <SideSection id="projects" className="h-screen z-10">
-            <ProjectCard
-              gradientColor="red"
-              coverImage="/public_assets/banners/orthopaignia.png"
-            />
-            <ProjectCard
-              gradientColor="orange"
-              coverImage="/public_assets/banners/loopokrator.png"
-            />
-            <ProjectCard
-              gradientColor="blue"
-              coverImage="/public_assets/banners/nefelis_rooms.png"
-            />
-            <ProjectCard
-              gradientColor="gold"
-              coverImage="https://www.ujacka.gr/images/ujackaLogo.png"
-            />
-            <ProjectCard
-              gradientColor="green"
-              coverImage="https://www.brunisapartments.com/logo.svg"
-            />
-            <ProjectCard
-              gradientColor="indigo"
-              coverImage="https://www.alexaphotos.com/logo.svg"
-            />
-            <ProjectCard
-              gradientColor="pink"
-              coverImage="/public_assets/banners/mechtopia.png"
-            />
+          <SideSection id="projects" className="h-screen z-10" useGrid={true}>
+            {projectsData &&
+              projectsData.map((project) => (
+                <ProjectCard
+                  preferedColor={project["prefered-color"]}
+                  coverImage={project["cover-image"]}
+                  projectName={project.name}
+                  description={project.description}
+                  projectLink={project["project-link"]}
+                />
+              ))}
+            {projectsData && projectsData.length % 2 != 0 && (
+              // <div className="">
+
+              <Link
+                className="flex flex-col justify-center items-center hover:underline focus:underline"
+                href="./public_assets/resume/Konstantinos Siasios - Resume.pdf"
+              >
+                <div>
+                  <IoSave className="absolute animate-ping" />
+                  <IoSave />
+                </div>
+                <p>Download my resume</p>
+              </Link>
+              // </div>
+            )}
           </SideSection>
         </div>
       </div>

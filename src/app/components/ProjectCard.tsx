@@ -1,16 +1,24 @@
+import { Url } from "next/dist/shared/lib/router/router";
 import Image from "next/image";
+import Link from "next/link";
 import { LuExternalLink } from "react-icons/lu";
 
 interface Props {
-  gradientColor?: String;
-  className?: String;
+  preferedColor?: string;
+  className?: string;
   coverImage?: string;
+  projectName?: string;
+  description?: string;
+  projectLink?: string;
 }
 
 const ProjectCard: React.FC<Props> = ({
-  gradientColor,
+  preferedColor,
   className,
   coverImage,
+  projectName,
+  projectLink,
+  description,
 }) => {
   const colors = {
     red: "#FF7575",
@@ -71,18 +79,22 @@ const ProjectCard: React.FC<Props> = ({
       {/* <div className={`group-hover:block hidden absolute top-0 left-0 w-full h-full bg-gradient-to-t from-[${colorGradients[0]}] to-[${colorGradients[0]}] z-40`}> */}
       <div
         className={`${
-          colorGradients[gradientColor as keyof typeof colorGradients]
+          colorGradients[preferedColor as keyof typeof colorGradients]
         } shadow-[inset_0_0_0_2px_rgba(255,255,255,.15)] items-center justify-center group-hover:opacity-100 focus-within:opacity-100 group-hover:animate-fadeIn focus-within:animate-fadeIn opacity-0 flex absolute top-0 left-0 w-full h-full bg-gradient-to-t z-20`}
       >
         {/* Content revealed on hover */}
-        <button className="inline-flex gap-1 items-center font-bold hover:bg-black/90 focus:bg-black/90 bg-black/70 backdrop-blur-sm px-4 py-2 hover:shadow-[-.5rem_.5rem_white,inset_0_0_0_2px_rgba(255,255,255,.15)] focus:shadow-[-.5rem_.5rem_white,inset_0_0_0_2px_rgba(255,255,255,.15)] transition-[box-shadow_background-color] ease-linear duration-200">
+        <Link
+          href={projectLink as Url}
+          target="_blank"
+          className="inline-flex gap-1 items-center font-bold hover:bg-black/90 focus:bg-black/90 bg-black/70 backdrop-blur-sm px-4 py-2 hover:shadow-[-.5rem_.5rem_white,inset_0_0_0_2px_rgba(255,255,255,.15)] focus:shadow-[-.5rem_.5rem_white,inset_0_0_0_2px_rgba(255,255,255,.15)] transition-[box-shadow_background-color] ease-linear duration-200"
+        >
           Open Project <LuExternalLink />
-        </button>
+        </Link>
       </div>
       <div
         className={`${
-          gradientColor
-            ? colorBG[gradientColor as keyof typeof colorBG]
+          preferedColor
+            ? colorBG[preferedColor as keyof typeof colorBG]
             : "bg-cyan-400"
         } xs:hidden absolute h-full w-5 z-50`}
       ></div>
