@@ -218,13 +218,14 @@ export default function Home() {
           </SideSection>
           <SideSection id="projects" className="h-screen z-10" useGrid={true}>
             {projectsData &&
-              projectsData.map((project) => (
+              projectsData.map((project, index) => (
                 <ProjectCard
                   preferedColor={project["prefered-color"]}
                   coverImage={project["cover-image"]}
                   projectName={project.name}
                   description={project.description}
                   projectLink={project["project-link"]}
+                  key={index}
                 />
               ))}
             {projectsData && projectsData.length % 2 != 0 && (
